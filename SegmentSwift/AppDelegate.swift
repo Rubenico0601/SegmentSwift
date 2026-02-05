@@ -1,36 +1,52 @@
 //
-//  AppDelegate.swift
-//  SegmentSwift
-//
-//  Created by Ruben Charles on 13/09/25.
+// AppDelegate.swift
 //
 
 import UIKit
+import Segment
+import SegmentCleverTap
+import CleverTapSDK
+import AnalyticsLive
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
+    var window: UIWindow?
 
+    func application(
+      _ application: UIApplication,
+      didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?
+    ) -> Bool {
+        
+        CleverTap.setDebugLevel(CleverTapLogLevel.debug.rawValue)
+        // ==== Replace with your Segment Source WRITE KEY ====
+        let config = Configuration(writeKey: "lmjYxOXGPY0eFCnc6JjiEdzu3bdk4Bh3")
+        let analytics = Analytics(configuration: config)
+        
+        // Add the CleverTap destination plugin (forwards Segment calls to CleverTap)
+        analytics.add(plugin: CleverTapDestination())
+        analytics.add(plugin: DestinationFilters())
 
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        // Save a global instance for easy use across your app
+        Analytics.main = analytics
+
         return true
     }
 
     // MARK: UISceneSession Lifecycle
-
-    func application(_ application: UIApplication, configurationForConnecting connectingSceneSession: UISceneSession, options: UIScene.ConnectionOptions) -> UISceneConfiguration {
-        // Called when a new scene session is being created.
-        // Use this method to select a configuration to create the new scene with.
-        return UISceneConfiguration(name: "Default Configuration", sessionRole: connectingSceneSession.role)
+    func application(_ application: UIApplication,
+                     configurationForConnecting connectingSceneSession: UISceneSession,
+                     options: UIScene.ConnectionOptions) -> UISceneConfiguration {
+        return UISceneConfiguration(name: "Default Configuration",
+                                    sessionRole: connectingSceneSession.role)
     }
 
-    func application(_ application: UIApplication, didDiscardSceneSessions sceneSessions: Set<UISceneSession>) {
-        // Called when the user discards a scene session.
-        // If any sessions were discarded while the application was not running, this will be called shortly after application:didFinishLaunchingWithOptions.
-        // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
-    }
-
-
+    func application(_ application: UIApplication,
+                     didDiscardSceneSessions sceneSessions: Set<UISceneSession>) {}
 }
 
+// Shared analytics instance accessible from anywhere in app
+extension Analytics {
+    // implicitly-unwrapped optional, set at launch in AppDelegate
+    static var main: Analytics!
+}

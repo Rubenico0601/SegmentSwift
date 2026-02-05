@@ -1,0 +1,69 @@
+{
+  "originHash" : "7dc583faeea3d8073475a3030d965502ae042ba4ea8322366a24f72d44f10c53",
+  "pins" : [
+    {
+      "identity" : "analytics-swift",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/segmentio/analytics-swift.git",
+      "state" : {
+        "revision" : "5d3a762da5412d324205a58358b95e1da334c21e",
+        "version" : "1.8.0"
+      }
+    },
+    {
+      "identity" : "analytics-swift-live",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/segment-integrations/analytics-swift-live.git",
+      "state" : {
+        "revision" : "39d684ea43f575a470cd35b60ff3e83ef39d0608",
+        "version" : "3.2.0"
+      }
+    },
+    {
+      "identity" : "clevertap-ios-sdk",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/CleverTap/clevertap-ios-sdk.git",
+      "state" : {
+        "revision" : "2573f5c1a3ee9656138a80029e68cccebd7759bb",
+        "version" : "7.3.3"
+      }
+    },
+    {
+      "identity" : "clevertap-segment-swift",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/CleverTap/clevertap-segment-swift.git",
+      "state" : {
+        "revision" : "9a093df62a3839286c4736353e41405e1d169d20",
+        "version" : "1.0.0"
+      }
+    },
+    {
+      "identity" : "jsonsafeencoding-swift",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/segmentio/jsonsafeencoding-swift.git",
+      "state" : {
+        "revision" : "af6a8b360984085e36c6341b21ecb35c12f47ebd",
+        "version" : "2.0.0"
+      }
+    },
+    {
+      "identity" : "sovran-swift",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/segmentio/sovran-swift.git",
+      "state" : {
+        "revision" : "24867f3e4ac62027db9827112135e6531b6f4051",
+        "version" : "1.1.2"
+      }
+    },
+    {
+      "identity" : "substrata-swift",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/segmentio/substrata-swift.git",
+      "state" : {
+        "revision" : "293df9d9ad5339bf24abaf9525518c5019a061b7",
+        "version" : "2.1.0"
+      }
+    }
+  ],
+  "version" : 3
+}
